@@ -1,0 +1,191 @@
+#lesson-div {
+	width: min(100%, 70ch);
+	color: var(--color-foreground);
+	line-height: 1.7;
+	overflow-wrap: anywhere;
+}
+
+#lesson-div > :first-child {
+	margin-top: 0;
+}
+
+#lesson-div > :last-child {
+	margin-bottom: 0;
+}
+
+#lesson-div h1,
+#lesson-div h2,
+#lesson-div h3,
+#lesson-div h4,
+#lesson-div h5,
+#lesson-div h6 {
+	color: var(--color-foreground);
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 1.75em 0 0.65em;
+}
+
+#lesson-div h1 {
+	border-bottom: 3px double var(--color-border);
+	font-size: clamp(1.8rem, 5vw, 2.5rem);
+	padding-bottom: 0.35em;
+}
+
+#lesson-div h2 {
+	border-bottom: 1px solid var(--color-border);
+	font-size: clamp(1.45rem, 4vw, 1.9rem);
+	padding-bottom: 0.25em;
+}
+
+#lesson-div h3 {
+	font-size: 1.35rem;
+}
+
+#lesson-div h4,
+#lesson-div h5,
+#lesson-div h6 {
+	font-size: 1.1rem;
+}
+
+#lesson-div p,
+#lesson-div ul,
+#lesson-div ol,
+#lesson-div blockquote,
+#lesson-div pre,
+#lesson-div table,
+#lesson-div figure {
+	margin: 1em 0;
+}
+
+#lesson-div ul,
+#lesson-div ol {
+	padding-left: 1.6em;
+}
+
+#lesson-div ul {
+	list-style: disc;
+}
+
+#lesson-div ol {
+	list-style: decimal;
+}
+
+#lesson-div ul ul {
+	list-style: circle;
+	margin: 0.25em 0;
+}
+
+#lesson-div li + li {
+	margin-top: 0.35em;
+}
+
+#lesson-div a {
+	color: var(--color-colored-foreground);
+	text-decoration: underline;
+	text-decoration-thickness: 0.08em;
+	text-underline-offset: 0.15em;
+}
+
+#lesson-div a:hover {
+	text-decoration-thickness: 0.16em;
+}
+
+#lesson-div strong {
+	font-weight: 700;
+}
+
+#lesson-div em {
+	font-style: italic;
+}
+
+#lesson-div del {
+	opacity: 0.7;
+}
+
+#lesson-div blockquote {
+	border-left: 4px solid var(--color-colored-foreground);
+	color: var(--color-dim-foreground);
+	padding: 0.2em 1em;
+}
+
+#lesson-div blockquote > :first-child {
+	margin-top: 0;
+}
+
+#lesson-div blockquote > :last-child {
+	margin-bottom: 0;
+}
+
+#lesson-div code {
+	background: var(--color-general-background);
+	border: 1px solid var(--color-border);
+	font-family: "Courier New", monospace;
+	font-size: 0.9em;
+	padding: 0.1em 0.35em;
+}
+
+#lesson-div pre {
+	background: var(--color-general-background);
+	border: 1px solid var(--color-border);
+	overflow-x: auto;
+	padding: 1em;
+}
+
+#lesson-div pre code {
+	background: transparent;
+	border: 0;
+	display: block;
+	font-size: 0.9rem;
+	line-height: 1.5;
+	min-width: max-content;
+	padding: 0;
+}
+
+#lesson-div hr {
+	border: 0;
+	border-top: 3px double var(--color-border);
+	margin: 2em 0;
+}
+
+#lesson-div img {
+	display: block;
+	height: auto;
+	margin: 1.5em auto;
+	max-width: 100%;
+}
+
+#lesson-div table {
+	border-collapse: collapse;
+	display: block;
+	max-width: 100%;
+	overflow-x: auto;
+	width: max-content;
+}
+
+#lesson-div th,
+#lesson-div td {
+	border: 1px solid var(--color-border);
+	padding: 0.55em 0.75em;
+	text-align: left;
+}
+
+#lesson-div th {
+	background: var(--color-general-background);
+	font-weight: 700;
+}
+
+#lesson-div input[type="checkbox"] {
+	accent-color: var(--color-colored-foreground);
+	margin-right: 0.5em;
+}
+
+@media (max-width: 640px) {
+	#lesson-div {
+		line-height: 1.6;
+	}
+
+	#lesson-div pre {
+		margin-left: -0.5rem;
+		margin-right: -0.5rem;
+	}
+}
