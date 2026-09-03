@@ -44,15 +44,16 @@
         </div>
     </nav>-->
     <main class="flex items-center justify-center flex-col flex-1">
-        <div class="bg-background flex items-center justify-center flex-col border-border border-4 border-double p-2 gap-2 max-w-[60vw] shadow-[10px_10px_0px_var(--shadow-color)]">
+        <div class="bg-background flex items-center justify-center flex-col border-border border-4 border-double p-2 gap-2 grow md:grow-0 md:max-w-[60vw] shadow-[10px_10px_0px_var(--shadow-color)]">
             <section class="flex items-center align-center flex-col gap-3">
                 <div class="flex flex-col items-center gap-2">
-                    <pre class="tracking-tight leading-tight w-fit text-colored-foreground">    ___                     _                     ____  ____  ____ 
+                    <pre class="hidden md:block tracking-tight leading-tight w-fit text-colored-foreground">    ___                     _                     ____  ____  ____ 
    /   |  _________ ___  __(_)   ______  _____   / __ \/ __ \/ __ \
   / /| | / ___/ __ `/ / / / / | / / __ \/ ___/  / /_/ / / / / / / /
  / ___ |/ /  / /_/ / /_/ / /| |/ / /_/ (__  )  / ____/ /_/ / /_/ / 
 /_/  |_/_/   \__, /\__,_/_/ |___/\____/____/  /_/    \____/\____/  
                /_/</pre>
+                    <h1 class="md:hidden text-2xl text-colored-foreground">Arquivos POO</h1>
                     <p class="w-full text-center">Site para a matéria de POO da sala de CCO-2N/2026 no UniAnchieta</p>
                 </div>
                 <div class="buttons grid auto-cols-max grid-flow-col gap-4">
@@ -63,19 +64,21 @@
                         <p class="py-0.5 px-2 border border-border border-doubl">verifica</p>
                     </a>
                     <a href="./sobre" class="cursor-pointer select-none h-10 block">
-                        <p class="py-0.5 px-2 border border-border border-double">Sobre o site</p>
+                        <p class="py-0.5 px-2 border border-border border-double">Sobre</p>
 					</a>
                 </div>
             </section>
-            <section class="p-2">
-                <div class="border-4 border-border border-double float-start w-[50%] h-[25vh] mr-5 mb-5 relative">
+            <section class="p-2 flex flex-col justify-center md:block">
+                <div class="border-4 border-border border-double float-start md:w-[50%] h-[40vh] md:h-[25vh] mr-5 mb-5 relative">
                     <p class="absolute bg-background left-1 -top-4 px-1 text-lg">Últimas atividades</p>
-                    <div class="h-[24vh] overflow-y-scroll p-2 pt-3 scrollbar-thumb-colored-foreground scrollbar-track-transparent scrollbar-thin flex flex-col gap-2" id="lessons-list">								
+                    <div class="h-[39vh] md:h-[24vh] overflow-y-scroll p-2 pt-3 scrollbar-thumb-colored-foreground scrollbar-track-transparent scrollbar-thin flex flex-col gap-2" id="lessons-list">								
 						<p>Carregando...</p>	
                     </div>
                 </div>
-                <p class="indent-3">Programação orientada a objetos é um paradigma de programação baseado na organização de código em torno de estruturas chamadas "objetos", que combinam dados (atributos) e comportamentos (métodos) para simular elementos do mundo real.</p>
-				<p class="indent-3">Nesse site serão disponibilizadas atividades extras e informações das aulas de Programação Orientada a Objetos da turma de CCO-2N/2026 no UniAnchieta.</p>
+                <div>
+                    <p class="indent-3">Programação orientada a objetos é um paradigma de programação baseado na organização de código em torno de estruturas chamadas "objetos", que combinam dados (atributos) e comportamentos (métodos) para simular elementos do mundo real.</p>
+				    <p class="indent-3">Nesse site serão disponibilizadas atividades extras e informações das aulas de Programação Orientada a Objetos da turma de CCO-2N/2026 no UniAnchieta.</p>
+                </div>    
             </section>
             <section class="mb-5">
                 <p class="text-colored-foreground">Explore o site!</p>
