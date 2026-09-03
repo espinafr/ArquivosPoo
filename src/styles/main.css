@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+    --color-background: var(--bg-color);
+    --color-foreground: var(--text-color);
+    --color-general-background: var(--general-bg-color);
+    --color-dim-foreground: var(--text-dim-color);
+    --color-border: var(--border-color);
+    --color-shadow: var(--shadow-color);
+    --color-colored-foreground: var(--colored-text);
+}
+
+:root {
+    --bg-color: #131313;
+    --text-color: #dadada;
+    --text-dim-color: #a7a7a7;
+    --general-bg-color: #1a1a1a;
+    --border-color: #333333;
+    --shadow-color: #333333e6;
+    --colored-text: #ff6900;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #ffffff;
+        --text-color: #000000;
+        --text-dim-color: #808080;
+        --general-bg-color: #e9e6e1;
+        --border-color: #000000;
+        --shadow-color: rgba(0, 0, 0, 0.9);
+        --colored-text: #0010a5;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--general-bg-color);
+    color: var(--color-foreground);
+    min-height: 100vh;
+}
+
+.buttons > a > p {
+    box-shadow: 0px 3px 0px var(--border-color);
+    margin-top: 4px;
+}
+.buttons > a:hover > p {
+    box-shadow: 0px 7px 0px var(--border-color);
+    margin-top: 0px;
+}
+
+.buttons.sub > a > p {
+    box-shadow: 0px 2px 0px var(--border-color);
+    margin-top: 3px;
+}
+.buttons.sub > a:hover > p {
+    box-shadow: 0px 5px 0px var(--border-color);
+    margin-top: 0px;
+}

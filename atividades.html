@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atividades extras e materiais da disciplina de Programação Orientada a Objetos da turma CCO-2N/2026 do UniAnchieta.">
+    <meta name="subject" content="Programação Orientada a Objetos">
+    <meta name="author" content="espinafr">
+    <meta name="language" content="pt-br">
+    <meta name="robots" content="index, follow">
+    <meta name="rating" content="general">
+    <meta name="application-name" content="Arquivos POO">
+    <meta name="theme-color" content="#131313">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="https://espinafr.github.io/ArquivosPoo/">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arquivos POO">
+    <meta property="og:description" content="Atividades extras e materiais da disciplina de Programação Orientada a Objetos da turma CCO-2N/2026 do UniAnchieta.">
+    <meta property="og:url" content="https://espinafr.github.io/ArquivosPoo/">
+    <meta property="og:site_name" content="Arquivos POO">
+    <meta property="og:image" content="https://espinafr.github.io/ArquivosPoo/public/site-banner.webp">
+    <meta property="og:image:alt" content="Banner do site Arquivos POO">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arquivos POO">
+    <meta name="twitter:description" content="Atividades extras e materiais da disciplina de Programação Orientada a Objetos da turma CCO-2N/2026 do UniAnchieta.">
+    <meta name="twitter:image" content="https://espinafr.github.io/ArquivosPoo/public/site-banner.webp">
+    <meta name="twitter:image:alt" content="Banner do site Arquivos POO">
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<title>Arquivos POO</title>
+</head>
+<body class="flex flex-col">
+    <nav class="flex absolute right-0">
+        <div class="justify-self-end bg-background border-border border-4 border-double p-2 m-2 w-fit relative flex items-center shadow-[5px_5px_0px_var(--shadow-color)]">
+            <p class="absolute bg-background -top-3.5 right-1 px-1">Navegação</p>
+            <div class="buttons sub grid grid-cols-4 gap-4 mt-0.5">
+                <a href="/ArquivosPoo" class="cursor-pointer select-none h-10 block">
+                    <p class="py-0.5 px-2 border border-border text-center">Home</p>
+                </a>
+                <a href="/ArquivosPoo/atividades" class="cursor-pointer select-none h-10 block">
+                    <p class="py-0.5 px-2 border border-border text-center">Atividades</p>
+                </a>
+                <a href="/ArquivosPoo/verifica" class="cursor-pointer select-none h-10 block">
+                    <p class="py-0.5 px-2 border border-border text-center">verifica</p>
+                </a>
+                <a href="/ArquivosPoo/sobre" class="cursor-pointer select-none h-10 block">
+                    <p class="py-0.5 px-2 border border-border text-center">Sobre o site</p>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main class="flex items-center justify-center flex-col flex-1">
+        <div class="bg-background flex items-center justify-center flex-col border-border border-4 border-double p-2 gap-2 max-w-[60vw] shadow-[10px_10px_0px_var(--shadow-color)]">
+            <section class="p-2">
+                <p>Todas as atividades podem ser testadas usando a biblitoeca python <a href="ArquivosPoo/index.html" target="_blank" class="text-colored-foreground underline">verifica</a>.</p>
+            </section>
+            <section class="p-2 max-h-[60vh] overflow-y-scroll scrollbar-thumb-colored-foreground scrollbar-track-transparent scrollbar-thin flex flex-col gap-2" id="lessons-list">
+                <p>Carregando atividades...</p>
+            </section>
+        </div>
+    </main>
+	<script type="module" src="/src/main.ts"></script>
+	<script type="module" src="/src/pages/atividades.ts"></script>
+</body>
+</html>
