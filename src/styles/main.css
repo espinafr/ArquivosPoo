@@ -37,6 +37,8 @@ body {
     background-color: var(--general-bg-color);
     color: var(--color-foreground);
     min-height: 100vh;
+    scroll-behavior: smooth;
+    @apply scrollbar-thumb-colored-foreground scrollbar-track-transparent scrollbar-thin;
 }
 
 .buttons > a > p {
