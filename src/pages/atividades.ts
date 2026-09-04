@@ -19,7 +19,7 @@ function create_row(row: Record<string, unknown>): void {
     if (!row["readme"] || !row["titulo"] || !row["descricao"]) {
         return;
     }
-    lessons_list.innerHTML += `<a href="${import.meta.env.BASE_URL}/atividade?a=${row["readme"]}" class="border border-dim-foreground p-3 flex flex-col justify-center">
+    lessons_list.innerHTML += `<a href="${import.meta.env.BASE_URL}atividade?a=${row["readme"]}" class="border border-dim-foreground p-3 flex flex-col justify-center">
                     <div class="flex justify-between">
                         <p class="font-bold text-md text-colored-foreground">${row["titulo"]}</p>
                         <p class="text-sm text-dim-foreground italic">${row["tipo"] || ""}</p>
