@@ -11,6 +11,7 @@
                 "expected": [
                     "Olá Théo!"
                 ],
+                "regex": true,
                 "info": "responde a nomes"
             },
             {
@@ -20,6 +21,7 @@
                 "expected": [
                     "Olá Fernanda Azeitona!"
                 ],
+                "regex": true,
                 "info": "lida com nomes com espaço"
             },
             {
@@ -29,6 +31,7 @@
                 "expected": [
                     "Olá mundo!"
                 ],
+                "regex": true,
                 "info": "responde \"Olá mundo!\" quando não há input"
             }
         ]
