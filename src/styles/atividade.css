@@ -116,29 +116,11 @@
 	margin-bottom: 0;
 }
 
-#lesson-div code {
-	background: var(--color-general-background);
-	border: 1px solid var(--color-border);
-	font-family: "Courier New", monospace;
-	font-size: 0.9em;
-	padding: 0.1em 0.35em;
-}
-
 #lesson-div pre {
 	background: var(--color-general-background);
 	border: 1px solid var(--color-border);
 	overflow-x: auto;
 	padding: 1em;
-}
-
-#lesson-div pre code {
-	background: transparent;
-	border: 0;
-	display: block;
-	font-size: 0.9rem;
-	line-height: 1.5;
-	min-width: max-content;
-	padding: 0;
 }
 
 #lesson-div hr {

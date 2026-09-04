@@ -58,3 +58,22 @@ body {
     box-shadow: 0px 5px 0px var(--border-color);
     margin-top: 0px;
 }
+
+code {
+	background: var(--color-general-background);
+	border: 1px solid var(--color-border);
+	font-family: "Courier New", monospace;
+	font-size: 0.9em;
+	padding: 0.1em 0.35em;
+    white-space: nowrap;
+}
+
+pre code {
+	background: transparent;
+	border: 0;
+	display: block;
+	font-size: 0.9rem;
+	line-height: 1.5;
+	min-width: max-content;
+	padding: 0;
+}
