@@ -12,7 +12,7 @@
     <meta name="robots" content="index, follow">
     <meta name="rating" content="general">
     <meta name="application-name" content="Arquivos POO">
-    <meta name="theme-color" content="#131313">
+    <meta name="theme-color" content="#ff6900">
     <meta name="format-detection" content="telephone=no">
     <link rel="canonical" href="https://espinafr.github.io/ArquivosPoo/">
     <meta property="og:locale" content="pt_BR">
@@ -34,19 +34,19 @@
 <body class="flex flex-col">
     <nav class="flex mx-auto md:absolute md:right-0">
         <div class="justify-self-end bg-background border-border border-4 border-double p-2 m-2 w-fit relative flex items-center shadow-[5px_5px_0px_var(--shadow-color)]">
-            <p class="absolute bg-background -top-3.5 right-1 px-1 text-sm md:text-md">Navegação</p>
+            <p class="absolute bg-background -top-3.5 right-1 px-1 text-sm md:text-base">Navegação</p>
             <div class="buttons sub grid grid-cols-4 gap-1 md:gap-4 mt-0.5">
                 <a href="./index" class="cursor-pointer select-none h-10 block">
-                    <p class="py-0.5 px-2 border border-border text-center text-sm md:text-md">Home</p>
+                    <p class="py-0.5 px-2 border border-border text-center text-sm md:text-base">Home</p>
                 </a>
                 <a href="./atividades" class="cursor-pointer select-none h-10 block">
-                    <p class="py-0.5 px-2 border border-border text-center text-sm md:text-md">Atividades</p>
+                    <p class="py-0.5 px-2 border border-border text-center text-sm md:text-base">Atividades</p>
                 </a>
                 <a href="./verifica" class="cursor-pointer select-none h-10 block">
-                    <p class="py-0.5 px-2 border border-border text-center text-sm md:text-md">verifica</p>
+                    <p class="py-0.5 px-2 border border-border text-center text-sm md:text-base">verifica</p>
                 </a>
                 <a href="./sobre" class="cursor-pointer select-none h-10 block">
-                    <p class="py-0.5 px-2 border border-border text-center text-sm md:text-md">Sobre</p>
+                    <p class="py-0.5 px-2 border border-border text-center text-sm md:text-base">Sobre</p>
                 </a>
             </div>
         </div>
@@ -54,7 +54,11 @@
     <main class="flex md:items-center justify-center flex-col flex-1">
         <div class="bg-background flex items-center md:justify-center flex-col border-border border-4 border-double p-2 gap-2 grow md:grow-0 md:max-w-[60vw] shadow-[10px_10px_0px_var(--shadow-color)]">
             <section class="p-2">
-                <p>EM DESENVOLVIMENTO</p>
+                <h1 class="text-2xl text-colored-foreground">Sobre</h1>
+                <p class="indent-4 my-2">Esse site foi feito com o intuito de auxiliar os alunos na jornada de estudo da Programação Orientada a Objeto. Aqui você pode encontrar atividades, dicas e formas novas de pensar quando o assunto é POO e Python.</p>
+                <p class="indent-4 my-2">Ele foi feito usando Vite, TypeScript, Tailwind e Google Sheets (pois é!). Por ser um site estático, ele pôde ser hospedado no Github, mas ainda era necessário alguma maneira de armazenar dados para as atividades, já que sempre ter que fazer um commit não é a maneira mais eficiente de publicar coisas assim... Por isso o Google Sheets virou nosso banco de dados! Agora sempre que for necessário adicionar alguma atividade, só é preciso adicionar algumas células na planilha e voilá! Atividade postada.</p>
+                <p class="indent-4 my-2">Se quiser dar uma olhada no código, <a class="text-colored-foreground underline" target="_blank" href="https://github.com/espinafr/ArquivosPoo" target="_blank" rel="noopener noreferrer">acesse o repositório do projeto clicando aqui</a>! E se por algum motivo quiser ver o google sheets com os dados de cada atividade, <a class="text-colored-foreground underline" target="_blank" href="https://docs.google.com/spreadsheets/d/1iMUNgtURBd8QIIDOQvcOz6ynSvFrEDTP-_D22h713iA/" rel="noopener noreferrer">clique aqui</a>!</p>
+                <p>Feito com ❤️ por <a href="https://github.com/espinafr" rel="me" target="_blank" class="text-colored-foreground">Théo</a></p>
             </section>
         </div>
     </main>
