@@ -1,0 +1,36 @@
+{
+    "files": [
+        "ola.py"
+    ],
+    "ola.py": {
+        "INPUTS": [
+            {
+                "input": [
+                    "Théo"
+                ],
+                "expected": [
+                    "Olá Théo!"
+                ],
+                "info": "responde a nomes"
+            },
+            {
+                "input": [
+                    "Fernanda Azeitona"
+                ],
+                "expected": [
+                    "Olá Fernanda Azeitona!"
+                ],
+                "info": "lida com nomes com espaço"
+            },
+            {
+                "input": [
+                    ""
+                ],
+                "expected": [
+                    "Olá mundo!"
+                ],
+                "info": "responde \"Olá mundo!\" quando não há input"
+            }
+        ]
+    }
+}
