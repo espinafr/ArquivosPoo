@@ -75,5 +75,6 @@ pre code {
 	font-size: 0.9rem;
 	line-height: 1.5;
 	min-width: max-content;
+    overflow-x: auto;
 	padding: 0;
 }
