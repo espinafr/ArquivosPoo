@@ -2,6 +2,26 @@ import { fetchSpreadsheetData, type SpreadsheetOptions } from '../lib/lessons_pa
 import { marked } from 'marked';
 import '../styles/atividade.css'
 
+const asciinemaIdPattern = /^[a-zA-Z0-9_-]+$/;
+
+marked.use({
+    renderer: {
+        code({ text, lang }) {
+            if (lang?.trim().toLowerCase() === 'asciinema') {
+                const asciinemaId = text.trim();
+
+                if (!asciinemaIdPattern.test(asciinemaId)) {
+                    return '<p class="asciinema-error">Vídeo do Asciinema inválido.</p>';
+                }
+
+                return `<div class="asciinema-player" data-asciinema-id="${asciinemaId}"></div>`;
+            }
+
+            return false;
+        },
+    },
+});
+
 const queryString = window.location.search; 
 const urlParams = new URLSearchParams(queryString);
 
@@ -25,6 +45,22 @@ function createLessonMarkdown(content: string): void {
     }
     const htmlOutput: string = marked.parse(content) as string;
     lesson_div.innerHTML = htmlOutput;
+    addAsciinemaPlayers(lesson_div);
+}
+
+function addAsciinemaPlayers(container: HTMLElement): void {
+    container.querySelectorAll<HTMLElement>('[data-asciinema-id]').forEach((player) => {
+        const asciinemaId = player.dataset.asciinemaId;
+        if (!asciinemaId) {
+            return;
+        }
+
+        const script = document.createElement('script');
+        script.src = `https://asciinema.org/a/${asciinemaId}.js`;
+        script.id = `asciicast-${asciinemaId}`;
+        script.async = true;
+        player.appendChild(script);
+    });
 }
 
 async function loadLesson(): Promise<void> {
