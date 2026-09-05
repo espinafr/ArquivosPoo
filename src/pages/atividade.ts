@@ -1,13 +1,20 @@
 import { fetchSpreadsheetData, type SpreadsheetOptions } from '../lib/lessons_parser.ts';
 import { marked } from 'marked';
+import hljs from 'highlight.js/lib/core';
+import python from 'highlight.js/lib/languages/python';
 import '../styles/atividade.css'
 
 const asciinemaIdPattern = /^[a-zA-Z0-9_-]+$/;
+const supportedLanguages = new Set(['py', 'python']);
+
+hljs.registerLanguage('python', python);
 
 marked.use({
     renderer: {
         code({ text, lang }) {
-            if (lang?.trim().toLowerCase() === 'asciinema') {
+            const language = lang?.trim().toLowerCase();
+
+            if (language === 'asciinema') {
                 const asciinemaId = text.trim();
 
                 if (!asciinemaIdPattern.test(asciinemaId)) {
@@ -15,6 +22,11 @@ marked.use({
                 }
 
                 return `<div class="asciinema-player" data-asciinema-id="${asciinemaId}"></div>`;
+            }
+
+            if (language && supportedLanguages.has(language)) {
+                const highlightedCode = hljs.highlight(text, { language: 'python' }).value;
+                return `<pre><code class="hljs language-python">${highlightedCode}</code></pre>`;
             }
 
             return false;
