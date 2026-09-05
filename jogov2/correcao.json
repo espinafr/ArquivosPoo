@@ -1,0 +1,119 @@
+{
+    "description": "Neve, água e fogo!",
+    "hints": true,
+    "files": [
+        "jogov2.py"
+    ],
+    "jogov2.py": {
+        "INPUTS": [
+            {
+                "input": [
+                    ""
+                ],
+                "regex": true,
+                "expected": [
+                    "Saindo\\.\\.\\."
+                ],
+                "info": "o programa para quando uma opção inválida é selecionada"
+            },
+            {
+                "input": [
+                    "neve",
+                    ""
+                ],
+                "regex": true,
+                "expected": [
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "Saindo\\.\\.\\."
+                ],
+                "info": "aceita neve como opção"
+            },
+            {
+                "input": [
+                    "água",
+                    ""
+                ],
+                "regex": true,
+                "expected": [
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "Saindo\\.\\.\\."
+                ],
+                "info": "aceita água como opção"
+            },
+            {
+                "input": [
+                    "fogo",
+                    ""
+                ],
+                "regex": true,
+                "expected": [
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "Saindo\\.\\.\\."
+                ],
+                "info": "aceita fogo como opção"
+            },
+            {
+                "input": [
+                    "fogo",
+                    "neve",
+                    ""
+                ],
+                "regex": true,
+                "expected": [
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "Saindo\\.\\.\\."
+                ],
+                "info": "repetição funciona com duas escolhas"
+            },
+            {
+                "input": [
+                    "fogo",
+                    "neve",
+                    "neve",
+                    "água",
+                    "neve",
+                    "neve",
+                    "água",
+                    "água",
+                    "água",
+                    "fogo",
+                    ""
+                ],
+                "regex": true,
+                "expected": [
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "Saindo\\.\\.\\."
+                ],
+                "info": "repetição funciona com dez escolhas"
+            },
+            {
+                "input": [
+                    "fOGo",
+                    "ÁGuA",
+                    "nEVE",
+                    "ÁGUA",
+                    ""
+                ],
+                "regex": true,
+                "expected": [
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "(?i)(?:Empate\\.|O computador ganhou!|Você ganhou!)",
+                    "Saindo\\.\\.\\."
+                ],
+                "info": "é indiferente para capitalização"
+            }
+        ]
+    }
+}
