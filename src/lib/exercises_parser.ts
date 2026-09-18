@@ -28,6 +28,7 @@ export type SpreadsheetOptions = {
     spreadsheetIdOrUrl: string;
     gid?: string | number;
     query?: string;
+    hasHeaderRow?: boolean;
     cacheTtlMs?: number;
 };
 
@@ -97,9 +98,13 @@ async function requestSpreadsheetData(options: SpreadsheetOptions): Promise<Spre
         throw new Error(message || 'A Google Sheets retornou uma resposta sem dados.');
     }
 
-    const headers = createHeaders(data.table.cols);
+    const hasHeaderRow = options.hasHeaderRow ?? true;
+    const headers = hasHeaderRow && data.table.rows.length > 0
+        ? getHeaderRow(data.table.rows[0])
+        : createHeaders(data.table.cols);
+    const rows = hasHeaderRow ? data.table.rows.slice(1) : data.table.rows;
 
-    return data.table.rows.map((row) =>
+    return rows.map((row) =>
         Object.fromEntries(
             headers.map((header, index) => [header, row.c[index]?.v ?? null]),
         ),
@@ -121,4 +126,8 @@ export async function fetchSpreadsheetData(options: SpreadsheetOptions): Promise
 
 export function clearSpreadsheetData(options: SpreadsheetOptions): void {
     removeValue(createCacheKey(options));
+}
+
+function getHeaderRow(row: GoogleRow): string[] {
+    return row.c.map((cell, index) => String(cell?.v ?? `column_${index + 1}`).trim());
 }

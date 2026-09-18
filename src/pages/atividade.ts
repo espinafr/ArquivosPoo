@@ -49,7 +49,8 @@ const reload_button = document.getElementById("reload-exercise");
 const options: SpreadsheetOptions = {
     spreadsheetIdOrUrl: "1iMUNgtURBd8QIIDOQvcOz6ynSvFrEDTP-_D22h713iA",
     gid: "119440075",
-    query: `select * where A = '${atividade}' limit 1`
+    query: `select * where A = '${atividade}' limit 1`,
+    hasHeaderRow: false
 };
 
 function createexerciseMarkdown(content: string): void {
