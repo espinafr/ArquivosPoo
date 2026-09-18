@@ -59,6 +59,12 @@ body {
     margin-top: 0px;
 }
 
+a.link {
+	color: var(--color-colored-foreground);
+	text-decoration: underline;
+    cursor: pointer;
+}
+
 code {
 	background: var(--color-general-background);
 	border: 1px solid var(--color-border);

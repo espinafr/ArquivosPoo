@@ -1,4 +1,4 @@
-import { fetchSpreadsheetData, type SpreadsheetOptions } from '../lib/lessons_parser.ts';
+import { clearSpreadsheetData, fetchSpreadsheetData, type SpreadsheetOptions } from '../lib/exercises_parser.ts';
 import { marked } from 'marked';
 import hljs from 'highlight.js/lib/core';
 import python from 'highlight.js/lib/languages/python';
@@ -43,7 +43,8 @@ if (!atividade) {
     window.location.href = `${import.meta.env.BASE_URL}/atividades`;
 }
 
-const lesson_div: HTMLElement | null = document.getElementById("lesson-div")
+const exercise_div: HTMLElement | null = document.getElementById("exercise-div")
+const reload_button = document.getElementById("reload-exercise");
 
 const options: SpreadsheetOptions = {
     spreadsheetIdOrUrl: "1iMUNgtURBd8QIIDOQvcOz6ynSvFrEDTP-_D22h713iA",
@@ -51,13 +52,13 @@ const options: SpreadsheetOptions = {
     query: `select * where A = '${atividade}' limit 1`
 };
 
-function createLessonMarkdown(content: string): void {
-    if (!lesson_div) {
+function createexerciseMarkdown(content: string): void {
+    if (!exercise_div) {
         throw new Error("Div de atividade não encontrada no DOM.");
     }
     const htmlOutput: string = marked.parse(content) as string;
-    lesson_div.innerHTML = htmlOutput;
-    addAsciinemaPlayers(lesson_div);
+    exercise_div.innerHTML = htmlOutput;
+    addAsciinemaPlayers(exercise_div);
 }
 
 function addAsciinemaPlayers(container: HTMLElement): void {
@@ -75,8 +76,12 @@ function addAsciinemaPlayers(container: HTMLElement): void {
     });
 }
 
-async function loadLesson(): Promise<void> {
+async function loadexercise(forceReload = false): Promise<void> {
     try {
+        if (forceReload) {
+            clearSpreadsheetData(options);
+        }
+
         const rows = await fetchSpreadsheetData(options);
 
         if (rows.length > 0) {
@@ -86,7 +91,7 @@ async function loadLesson(): Promise<void> {
                 throw new Error("O markdown foi encontrado mas está vazio.")
             }
             
-            createLessonMarkdown(rows[0]['B'] as string);
+            createexerciseMarkdown(rows[0]['B'] as string);
         } else {
             throw new Error("O markdown não foi encontrado.")
         }
@@ -97,4 +102,8 @@ async function loadLesson(): Promise<void> {
     }
 }
 
-void loadLesson()
+reload_button?.addEventListener('click', () => {
+    void loadexercise(true);
+});
+
+void loadexercise()

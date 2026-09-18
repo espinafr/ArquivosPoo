@@ -1,3 +1,5 @@
+import { readValue, removeValue, saveValue } from './persist.ts';
+
 type GoogleCell = {
     v?: unknown;
 };
@@ -9,12 +11,16 @@ type GoogleColumn = {
 
 type GoogleTable = {
     cols: GoogleColumn[];
-    rows: Array<{ c: Array<GoogleCell | null> }>;
+    rows: GoogleRow[];
+};
+
+type GoogleRow = {
+    c: (GoogleCell | null)[];
 };
 
 type GoogleResponse = {
     status: string;
-    errors?: Array<{ message?: string }>;
+    errors?: { message?: string }[];
     table?: GoogleTable;
 };
 
@@ -22,7 +28,15 @@ export type SpreadsheetOptions = {
     spreadsheetIdOrUrl: string;
     gid?: string | number;
     query?: string;
+    cacheTtlMs?: number;
 };
+
+export interface SpreadsheetRow {
+    [columnName: string]: unknown;
+}
+
+const defaultCacheTtlMs = 24 * 60 * 60 * 1000;
+const cacheKeyPrefix = 'arquivos-poo:spreadsheet:';
 
 function getSpreadsheetId(value: string): string {
     const match = value.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
@@ -61,7 +75,15 @@ function createHeaders(columns: GoogleColumn[]): string[] {
     });
 }
 
-export async function fetchSpreadsheetData(options: SpreadsheetOptions, ): Promise<Array<Record<string, unknown>>> {
+function createCacheKey(options: SpreadsheetOptions): string {
+    return `${cacheKeyPrefix}${JSON.stringify({
+        spreadsheetIdOrUrl: getSpreadsheetId(options.spreadsheetIdOrUrl),
+        gid: options.gid ?? 0,
+        query: options.query ?? '',
+    })}`;
+}
+
+async function requestSpreadsheetData(options: SpreadsheetOptions): Promise<SpreadsheetRow[]> {
     const response = await fetch(sheetUrl(options));
 
     if (!response.ok) {
@@ -79,7 +101,24 @@ export async function fetchSpreadsheetData(options: SpreadsheetOptions, ): Promi
 
     return data.table.rows.map((row) =>
         Object.fromEntries(
-        headers.map((header, index) => [header, row.c[index]?.v ?? null]),
+            headers.map((header, index) => [header, row.c[index]?.v ?? null]),
         ),
     );
+}
+
+export async function fetchSpreadsheetData(options: SpreadsheetOptions): Promise<SpreadsheetRow[]> {
+    const cacheKey = createCacheKey(options);
+    const savedData = readValue<SpreadsheetRow[]>(cacheKey);
+
+    if (savedData) {
+        return savedData;
+    }
+
+    const freshData = await requestSpreadsheetData(options);
+    saveValue(cacheKey, freshData, options.cacheTtlMs ?? defaultCacheTtlMs);
+    return freshData;
+}
+
+export function clearSpreadsheetData(options: SpreadsheetOptions): void {
+    removeValue(createCacheKey(options));
 }
