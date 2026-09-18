@@ -35,7 +35,7 @@ export interface SpreadsheetRow {
     [columnName: string]: unknown;
 }
 
-const defaultCacheTtlMs = 24 * 60 * 60 * 1000;
+const defaultCacheTtlMs = 24 * 60 * 60 * 1000; // 1 dia
 const cacheKeyPrefix = 'arquivos-poo:spreadsheet:';
 
 function getSpreadsheetId(value: string): string {
