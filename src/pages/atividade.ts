@@ -107,4 +107,4 @@ reload_button?.addEventListener('click', () => {
     void loadexercise(true);
 });
 
-void loadexercise()
+void loadexercise(true); // Remendo temporário para novas atividades poderem ser acessadas sempre
