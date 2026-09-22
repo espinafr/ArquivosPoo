@@ -1,0 +1,144 @@
+{
+    "description": "Reprise 6",
+    "hints": true,
+    "files": [
+        "reprise6.py"
+    ],
+    "reprise6.py": {
+        "INPUTS": [
+            {
+                "input": [
+                    "Ana",
+                    "7",
+                    "9",
+                    "Bia",
+                    "5",
+                    "7",
+                    "Bia"
+                ],
+                "regex": true,
+                "expected": [
+                    "Ana:\\ 8\\.00",
+                    "Bia:\\ 6\\.00",
+                    "Notas\\ diferentes:\\ 3",
+                    "Consulta:\\ Bia\\ =\\ 6\\.00"
+                ],
+                "info": "notas repetidas e consulta do segundo aluno"
+            },
+            {
+                "input": [
+                    "Zeca",
+                    "0",
+                    "0",
+                    "Ana",
+                    "0",
+                    "0",
+                    "Zeca"
+                ],
+                "regex": true,
+                "expected": [
+                    "Zeca:\\ 0\\.00",
+                    "Ana:\\ 0\\.00",
+                    "Notas\\ diferentes:\\ 1",
+                    "Consulta:\\ Zeca\\ =\\ 0\\.00"
+                ],
+                "info": "média zero existe e ordem é preservada"
+            },
+            {
+                "input": [
+                    "Ana",
+                    "1",
+                    "2",
+                    "Bia",
+                    "3",
+                    "4",
+                    "Caio"
+                ],
+                "regex": true,
+                "expected": [
+                    "Ana:\\ 1\\.50",
+                    "Bia:\\ 3\\.50",
+                    "Notas\\ diferentes:\\ 4",
+                    "Aluno\\ não\\ encontrado\\."
+                ],
+                "info": "quatro notas distintas e consulta ausente"
+            },
+            {
+                "input": [
+                    "Ana",
+                    "10",
+                    "10",
+                    "Bia",
+                    "10",
+                    "10",
+                    "ana"
+                ],
+                "regex": true,
+                "expected": [
+                    "Ana:\\ 10\\.00",
+                    "Bia:\\ 10\\.00",
+                    "Notas\\ diferentes:\\ 1",
+                    "Aluno\\ não\\ encontrado\\."
+                ],
+                "info": "consulta diferencia maiúsculas"
+            },
+            {
+                "input": [
+                    "João Silva",
+                    "7.5",
+                    "8",
+                    "Lia",
+                    "6",
+                    "9",
+                    "João Silva"
+                ],
+                "regex": true,
+                "expected": [
+                    "João\\ Silva:\\ 7\\.75",
+                    "Lia:\\ 7\\.50",
+                    "Notas\\ diferentes:\\ 4",
+                    "Consulta:\\ João\\ Silva\\ =\\ 7\\.75"
+                ],
+                "info": "nomes compostos e notas decimais"
+            },
+            {
+                "input": [
+                    "A",
+                    "0",
+                    "10",
+                    "B",
+                    "10",
+                    "0",
+                    "A"
+                ],
+                "regex": true,
+                "expected": [
+                    "A:\\ 5\\.00",
+                    "B:\\ 5\\.00",
+                    "Notas\\ diferentes:\\ 2",
+                    "Consulta:\\ A\\ =\\ 5\\.00"
+                ],
+                "info": "conta notas diferentes, não médias"
+            },
+            {
+                "input": [
+                    "A",
+                    "2",
+                    "4",
+                    "B",
+                    "8",
+                    "10",
+                    "A"
+                ],
+                "regex": true,
+                "expected": [
+                    "A:\\ 3\\.00",
+                    "B:\\ 9\\.00",
+                    "Notas\\ diferentes:\\ 4",
+                    "Consulta:\\ A\\ =\\ 3\\.00"
+                ],
+                "info": "linhas da matriz não sobrescrevem a primeira média"
+            }
+        ]
+    }
+}

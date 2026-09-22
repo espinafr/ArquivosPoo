@@ -1,0 +1,81 @@
+{
+    "description": "Reprise 2",
+    "hints": true,
+    "files": [
+        "reprise2.py"
+    ],
+    "reprise2.py": {
+        "INPUTS": [
+            {
+                "input": [
+                    "Ana",
+                    "100",
+                    "4"
+                ],
+                "regex": true,
+                "expected": [
+                    "Responsável:\\ Ana",
+                    "Total:\\ R\\$110\\.00",
+                    "Por\\ pessoa:\\ R\\$27\\.50"
+                ],
+                "info": "acrescenta 10% e divide"
+            },
+            {
+                "input": [
+                    "João Silva",
+                    "0",
+                    "3"
+                ],
+                "regex": true,
+                "expected": [
+                    "Responsável:\\ João\\ Silva",
+                    "Total:\\ R\\$0\\.00",
+                    "Por\\ pessoa:\\ R\\$0\\.00"
+                ],
+                "info": "aceita zero e nome composto"
+            },
+            {
+                "input": [
+                    "Bia",
+                    "25.40",
+                    "2"
+                ],
+                "regex": true,
+                "expected": [
+                    "Responsável:\\ Bia",
+                    "Total:\\ R\\$27\\.94",
+                    "Por\\ pessoa:\\ R\\$13\\.97"
+                ],
+                "info": "formata valores decimais"
+            },
+            {
+                "input": [
+                    "Caio",
+                    "10",
+                    "1"
+                ],
+                "regex": true,
+                "expected": [
+                    "Responsável:\\ Caio",
+                    "Total:\\ R\\$11\\.00",
+                    "Por\\ pessoa:\\ R\\$11\\.00"
+                ],
+                "info": "uma pessoa paga o total"
+            },
+            {
+                "input": [
+                    "Lia",
+                    "1",
+                    "3"
+                ],
+                "regex": true,
+                "expected": [
+                    "Responsável:\\ Lia",
+                    "Total:\\ R\\$1\\.10",
+                    "Por\\ pessoa:\\ R\\$0\\.37"
+                ],
+                "info": "arredonda apenas ao exibir"
+            }
+        ]
+    }
+}

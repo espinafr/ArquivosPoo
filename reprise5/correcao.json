@@ -1,0 +1,106 @@
+{
+    "description": "Reprise 5",
+    "hints": true,
+    "files": [
+        "reprise5.py"
+    ],
+    "reprise5.py": {
+        "INPUTS": [
+            {
+                "input": [
+                    "0"
+                ],
+                "regex": true,
+                "expected": [
+                    "Nenhum\\ valor\\ válido\\."
+                ],
+                "info": "encerra sem dividir por zero"
+            },
+            {
+                "input": [
+                    "-2",
+                    "-1",
+                    "0"
+                ],
+                "regex": true,
+                "expected": [
+                    "Valor\\ ignorado\\.",
+                    "Valor\\ ignorado\\.",
+                    "Nenhum\\ valor\\ válido\\."
+                ],
+                "info": "ignora todos os negativos"
+            },
+            {
+                "input": [
+                    "4",
+                    "-2",
+                    "8",
+                    "0"
+                ],
+                "regex": true,
+                "expected": [
+                    "Valor\\ ignorado\\.",
+                    "Quantidade:\\ 2",
+                    "Soma:\\ 12",
+                    "Média:\\ 6\\.00"
+                ],
+                "info": "negativo não altera soma nem quantidade"
+            },
+            {
+                "input": [
+                    "7",
+                    "0"
+                ],
+                "regex": true,
+                "expected": [
+                    "Quantidade:\\ 1",
+                    "Soma:\\ 7",
+                    "Média:\\ 7\\.00"
+                ],
+                "info": "aceita um positivo"
+            },
+            {
+                "input": [
+                    "1",
+                    "2",
+                    "2",
+                    "0"
+                ],
+                "regex": true,
+                "expected": [
+                    "Quantidade:\\ 3",
+                    "Soma:\\ 5",
+                    "Média:\\ 1\\.67"
+                ],
+                "info": "repete e arredonda a média"
+            },
+            {
+                "input": [
+                    "0",
+                    "99"
+                ],
+                "regex": true,
+                "expected": [
+                    "Nenhum\\ valor\\ válido\\."
+                ],
+                "info": "não continua depois do zero"
+            },
+            {
+                "input": [
+                    "2",
+                    "3",
+                    "-5",
+                    "0"
+                ],
+                "regex": true,
+                "expected": [
+                    "Valor\\ ignorado\\.",
+                    "Quantidade:\\ 2",
+                    "Soma:\\ 5",
+                    "Média:\\ 2\\.50"
+                ],
+                "info": "ignora negativo no final"
+            }
+        ]
+    }
+}

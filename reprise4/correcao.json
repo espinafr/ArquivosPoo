@@ -1,0 +1,308 @@
+{
+    "description": "Reprise 4 — Funções e procedimentos",
+    "hints": true,
+    "files": [
+        "reprise4.py"
+    ],
+    "reprise4.py": {
+        "STRUCTURE": {
+            "FUNCTIONS": [
+                {
+                    "name": "calcular_media",
+                    "runs": [
+                        {
+                            "input": [],
+                            "expected": 0.0,
+                            "info": "média de [] retorna 0.0"
+                        },
+                        {
+                            "input": [
+                                8
+                            ],
+                            "expected": 8.0,
+                            "info": "média de [8] retorna 8.0"
+                        },
+                        {
+                            "input": [
+                                4,
+                                8
+                            ],
+                            "expected": 6.0,
+                            "info": "média de [4, 8] retorna 6.0"
+                        },
+                        {
+                            "input": [
+                                6,
+                                7,
+                                8
+                            ],
+                            "expected": 7.0,
+                            "info": "média de [6, 7, 8] retorna 7.0"
+                        },
+                        {
+                            "input": [
+                                1,
+                                2,
+                                3,
+                                4
+                            ],
+                            "expected": 2.5,
+                            "info": "média de [1, 2, 3, 4] retorna 2.5"
+                        },
+                        {
+                            "input": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "expected": 0.0,
+                            "info": "média de [0, 0, 0] retorna 0.0"
+                        },
+                        {
+                            "input": [
+                                7.5,
+                                8,
+                                8.5
+                            ],
+                            "expected": 8.0,
+                            "info": "média de [7.5, 8, 8.5] retorna 8.0"
+                        },
+                        {
+                            "input": [
+                                1,
+                                1,
+                                2
+                            ],
+                            "expected": 1.3333333333333333,
+                            "info": "média de [1, 1, 2] retorna 1.3333333333333333"
+                        }
+                    ]
+                },
+                {
+                    "name": "determinar_situacao",
+                    "runs": [
+                        {
+                            "input": [
+                                7
+                            ],
+                            "expected": "Aprovado",
+                            "info": "situação para [7]: Aprovado"
+                        },
+                        {
+                            "input": [
+                                5
+                            ],
+                            "expected": "Recuperação",
+                            "info": "situação para [5]: Recuperação"
+                        },
+                        {
+                            "input": [
+                                4.99
+                            ],
+                            "expected": "Reprovado",
+                            "info": "situação para [4.99]: Reprovado"
+                        },
+                        {
+                            "input": [
+                                10,
+                                74.99
+                            ],
+                            "expected": "Reprovado por falta",
+                            "info": "situação para [10, 74.99]: Reprovado por falta"
+                        },
+                        {
+                            "input": [
+                                7,
+                                75
+                            ],
+                            "expected": "Aprovado",
+                            "info": "situação para [7, 75]: Aprovado"
+                        },
+                        {
+                            "input": [
+                                6.99,
+                                100
+                            ],
+                            "expected": "Recuperação",
+                            "info": "situação para [6.99, 100]: Recuperação"
+                        },
+                        {
+                            "input": [
+                                5,
+                                75
+                            ],
+                            "expected": "Recuperação",
+                            "info": "situação para [5, 75]: Recuperação"
+                        },
+                        {
+                            "input": [
+                                0,
+                                75
+                            ],
+                            "expected": "Reprovado",
+                            "info": "situação para [0, 75]: Reprovado"
+                        },
+                        {
+                            "input": [
+                                10,
+                                0
+                            ],
+                            "expected": "Reprovado por falta",
+                            "info": "situação para [10, 0]: Reprovado por falta"
+                        },
+                        {
+                            "input": [
+                                0,
+                                74
+                            ],
+                            "expected": "Reprovado por falta",
+                            "info": "situação para [0, 74]: Reprovado por falta"
+                        }
+                    ]
+                }
+            ]
+        },
+        "INPUTS": [
+            {
+                "input": [
+                    "6",
+                    "7",
+                    "8",
+                    ""
+                ],
+                "expected": [
+                    "Média:\\ 7\\.00",
+                    "Situação:\\ Aprovado"
+                ],
+                "regex": true,
+                "info": "usa a frequência padrão"
+            },
+            {
+                "input": [
+                    "6",
+                    "7",
+                    "8",
+                    "74"
+                ],
+                "expected": [
+                    "Média:\\ 7\\.00",
+                    "Situação:\\ Reprovado\\ por\\ falta"
+                ],
+                "regex": true,
+                "info": "frequência tem prioridade"
+            },
+            {
+                "input": [
+                    "4",
+                    "5",
+                    "6",
+                    "75"
+                ],
+                "expected": [
+                    "Média:\\ 5\\.00",
+                    "Situação:\\ Recuperação"
+                ],
+                "regex": true,
+                "info": "aceita os limites 5 e 75"
+            },
+            {
+                "input": [
+                    "0",
+                    "0",
+                    "0",
+                    "100"
+                ],
+                "expected": [
+                    "Média:\\ 0\\.00",
+                    "Situação:\\ Reprovado"
+                ],
+                "regex": true,
+                "info": "média zero"
+            },
+            {
+                "input": [
+                    "10",
+                    "10",
+                    "10",
+                    "0"
+                ],
+                "expected": [
+                    "Média:\\ 10\\.00",
+                    "Situação:\\ Reprovado\\ por\\ falta"
+                ],
+                "regex": true,
+                "info": "zero de frequência não usa o padrão"
+            },
+            {
+                "input": [
+                    "10",
+                    "10",
+                    "10",
+                    "100"
+                ],
+                "expected": [
+                    "Média:\\ 10\\.00",
+                    "Situação:\\ Aprovado"
+                ],
+                "regex": true,
+                "info": "notas e frequência máximas"
+            },
+            {
+                "input": [
+                    "7.5",
+                    "8",
+                    "8.5",
+                    "80.5"
+                ],
+                "expected": [
+                    "Média:\\ 8\\.00",
+                    "Situação:\\ Aprovado"
+                ],
+                "regex": true,
+                "info": "aceita decimais"
+            },
+            {
+                "input": [
+                    "4",
+                    "4",
+                    "5",
+                    ""
+                ],
+                "expected": [
+                    "Média:\\ 4\\.33",
+                    "Situação:\\ Reprovado"
+                ],
+                "regex": true,
+                "info": "formata média com duas casas"
+            },
+            {
+                "input": [
+                    "6.99",
+                    "7",
+                    "7",
+                    "75"
+                ],
+                "expected": [
+                    "Média:\\ 7\\.00",
+                    "Situação:\\ Recuperação"
+                ],
+                "regex": true,
+                "info": "não arredonda antes de classificar"
+            },
+            {
+                "input": [
+                    "5",
+                    "5",
+                    "5",
+                    "74.99"
+                ],
+                "expected": [
+                    "Média:\\ 5\\.00",
+                    "Situação:\\ Reprovado\\ por\\ falta"
+                ],
+                "regex": true,
+                "info": "frequência decimal abaixo do limite"
+            }
+        ]
+    }
+}
